@@ -1,18 +1,28 @@
 import React from 'react'
-import { Routes, Route } from "react-router";
-import Firstborn from "./Firstborn/Firstborn";
-
-import './App.css'
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom"
+import NavBar from './navbar/NavBar';
+import Home from './Components/Home/Home';
+import Blog from './Components/Blog';
+import Download from './Components/Download';
+import About from './Components/MediaLiibrary';
+import How from './Components/How';
 
 function App() {
 
   return (
     <>
-       <Routes>
-        <Route index element={<Firstborn />}></Route>
-        {/* <Route path="/home" element={<Firstborn />}></Route> */}
-      </Routes>
- 
+     <BrowserRouter>
+
+<NavBar/>
+
+  <Routes >
+    <Route path="/" element={ <Home />}></Route>
+    <Route path="Blog" element={ <Blog />}></Route>
+    <Route path="Download" element={ <Download/>}></Route>
+    <Route path="About" element={ <About/>}></Route>
+    <Route path="how" element={ <How/>}></Route>
+  </Routes>
+</BrowserRouter>
     </>
   )
 }
